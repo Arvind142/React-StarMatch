@@ -4,14 +4,13 @@ import * as ReactDOM from 'react-dom/client';
 import StarDisplay from './StarDisplay';
 import PlayAgain from './PlayAgain';
 import ButtonDisplay from './ButtonDisplay';
-import { isCompositeComponentWithType } from 'react-dom/test-utils';
 
 const StarMatch = () => {
   const [secondsLeft, setSecondsLeft] = useState(20);
   const [stars, setStars] = useState(utils.random(1, 9));
   const [availableNums, setAvailableNums] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   const [candidateNums, setCandidateNums] = useState([]);
-  const gameStatus =(availableNums.length === 0 ?'won':(secondsLeft === 0?'lost':'active'));
+  const gameStatus = (availableNums.length === 0 ?'won':(secondsLeft === 0?'lost':'active'));
 
   useEffect(() => {
     if (secondsLeft > 0) {
